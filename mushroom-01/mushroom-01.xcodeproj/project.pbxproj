@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD0094CE29BFB62700E400A2 /* mushroom_01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CD29BFB62700E400A2 /* mushroom_01App.swift */; };
-		CD0094D029BFB62700E400A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CF29BFB62700E400A2 /* ContentView.swift */; };
+		CD0094CE29BFB62700E400A2 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CD29BFB62700E400A2 /* Main.swift */; };
+		CD0094D029BFB62700E400A2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CF29BFB62700E400A2 /* Mushroom.swift */; };
 		CD0094D229BFB62900E400A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D129BFB62900E400A2 /* Assets.xcassets */; };
 		CD0094D529BFB62900E400A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CD0094CA29BFB62700E400A2 /* mushroom-01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mushroom-01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD0094CD29BFB62700E400A2 /* mushroom_01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mushroom_01App.swift; sourceTree = "<group>"; };
-		CD0094CF29BFB62700E400A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CD0094CD29BFB62700E400A2 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		CD0094CF29BFB62700E400A2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
 		CD0094D129BFB62900E400A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,6 +35,9 @@
 		CD0094C129BFB62700E400A2 = {
 			isa = PBXGroup;
 			children = (
+				CD8E6ABE29BFBC5100E6642D /* AppLogic */,
+				CD8E6ABD29BFBC4400E6642D /* Model */,
+				CD8E6ABA29BFBC1E00E6642D /* Views */,
 				CD0094CC29BFB62700E400A2 /* mushroom-01 */,
 				CD0094CB29BFB62700E400A2 /* Products */,
 			);
@@ -51,8 +54,8 @@
 		CD0094CC29BFB62700E400A2 /* mushroom-01 */ = {
 			isa = PBXGroup;
 			children = (
-				CD0094CD29BFB62700E400A2 /* mushroom_01App.swift */,
-				CD0094CF29BFB62700E400A2 /* ContentView.swift */,
+				CD0094CD29BFB62700E400A2 /* Main.swift */,
+				CD0094CF29BFB62700E400A2 /* Mushroom.swift */,
 				CD0094D129BFB62900E400A2 /* Assets.xcassets */,
 				CD0094D329BFB62900E400A2 /* Preview Content */,
 			);
@@ -65,6 +68,59 @@
 				CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD8E6ABA29BFBC1E00E6642D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD8E6AC029BFBCED00E6642D /* Components */,
+				CD8E6ABF29BFBCDE00E6642D /* Navigation */,
+				CD8E6ABC29BFBC3700E6642D /* Screen */,
+				CD8E6ABB29BFBC2D00E6642D /* Modal */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CD8E6ABB29BFBC2D00E6642D /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		CD8E6ABC29BFBC3700E6642D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		CD8E6ABD29BFBC4400E6642D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD8E6ABE29BFBC5100E6642D /* AppLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppLogic;
+			sourceTree = "<group>";
+		};
+		CD8E6ABF29BFBCDE00E6642D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CD8E6AC029BFBCED00E6642D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD0094D029BFB62700E400A2 /* ContentView.swift in Sources */,
-				CD0094CE29BFB62700E400A2 /* mushroom_01App.swift in Sources */,
+				CD0094D029BFB62700E400A2 /* Mushroom.swift in Sources */,
+				CD0094CE29BFB62700E400A2 /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

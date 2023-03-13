@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct mushroom_01App: App {
+struct MushroomApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Mushroom()
         }
     }
 }
