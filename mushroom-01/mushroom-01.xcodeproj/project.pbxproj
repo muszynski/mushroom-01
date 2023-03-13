@@ -11,6 +11,9 @@
 		CD0094D029BFB62700E400A2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CF29BFB62700E400A2 /* Mushroom.swift */; };
 		CD0094D229BFB62900E400A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D129BFB62900E400A2 /* Assets.xcassets */; };
 		CD0094D529BFB62900E400A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */; };
+		CD8E6AC229BFBDC500E6642D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E6AC129BFBDC500E6642D /* Home.swift */; };
+		CD8E6AC429BFBDD000E6642D /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E6AC329BFBDD000E6642D /* Add.swift */; };
+		CD8E6AC629BFBDE100E6642D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E6AC529BFBDE100E6642D /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		CD0094CF29BFB62700E400A2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
 		CD0094D129BFB62900E400A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD8E6AC129BFBDC500E6642D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		CD8E6AC329BFBDD000E6642D /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
+		CD8E6AC529BFBDE100E6642D /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				CD0094CD29BFB62700E400A2 /* Main.swift */,
-				CD0094CF29BFB62700E400A2 /* Mushroom.swift */,
 				CD0094D129BFB62900E400A2 /* Assets.xcassets */,
 				CD0094D329BFB62900E400A2 /* Preview Content */,
 			);
@@ -91,6 +96,9 @@
 		CD8E6ABC29BFBC3700E6642D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				CD8E6AC129BFBDC500E6642D /* Home.swift */,
+				CD8E6AC329BFBDD000E6642D /* Add.swift */,
+				CD8E6AC529BFBDE100E6642D /* List.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 		CD8E6ABF29BFBCDE00E6642D /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				CD0094CF29BFB62700E400A2 /* Mushroom.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -194,6 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0094D029BFB62700E400A2 /* Mushroom.swift in Sources */,
+				CD8E6AC429BFBDD000E6642D /* Add.swift in Sources */,
+				CD8E6AC229BFBDC500E6642D /* Home.swift in Sources */,
+				CD8E6AC629BFBDE100E6642D /* List.swift in Sources */,
 				CD0094CE29BFB62700E400A2 /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
