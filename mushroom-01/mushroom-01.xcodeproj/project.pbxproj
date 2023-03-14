@@ -14,6 +14,7 @@
 		CD8E6AC229BFBDC500E6642D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E6AC129BFBDC500E6642D /* Home.swift */; };
 		CD8E6AC429BFBDD000E6642D /* Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E6AC329BFBDD000E6642D /* Add.swift */; };
 		CD8E6AC629BFBDE100E6642D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E6AC529BFBDE100E6642D /* List.swift */; };
+		CD8E6AC829BFC54800E6642D /* CardMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E6AC729BFC54800E6642D /* CardMushroom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		CD8E6AC129BFBDC500E6642D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CD8E6AC329BFBDD000E6642D /* Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Add.swift; sourceTree = "<group>"; };
 		CD8E6AC529BFBDE100E6642D /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		CD8E6AC729BFC54800E6642D /* CardMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMushroom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		CD8E6AC029BFBCED00E6642D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CD8E6AC729BFC54800E6642D /* CardMushroom.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				CD8E6AC229BFBDC500E6642D /* Home.swift in Sources */,
 				CD8E6AC629BFBDE100E6642D /* List.swift in Sources */,
 				CD0094CE29BFB62700E400A2 /* Main.swift in Sources */,
+				CD8E6AC829BFC54800E6642D /* CardMushroom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

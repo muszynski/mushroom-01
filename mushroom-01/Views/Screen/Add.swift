@@ -9,7 +9,14 @@ import SwiftUI
 
 struct Add: View {
     var body: some View {
-        Text("Add")
+        NavigationView{
+            VStack{
+                Text("Add")
+            }
+            .navigationTitle("Add")
+            .navigationBarTitleDisplayMode(.automatic)
+            .frame(maxWidth: .infinity, alignment: .center)
+        }
     }
 }
 

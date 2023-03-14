@@ -13,7 +13,10 @@ struct Home: View {
             VStack{
                 Text("Home")
             }
-        }.navigationTitle("Home coś tam")
+            .navigationTitle("Mushroom")
+            .navigationBarTitleDisplayMode(.automatic)
+            .frame(maxWidth: .infinity, alignment: .center)
+        }
     }
 }
 
