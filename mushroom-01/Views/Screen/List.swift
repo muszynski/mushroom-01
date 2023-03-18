@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct List: View {
+    
+    
+    
     var body: some View {
         NavigationView{
             VStack{
-                Text("List")
-                    .navigationTitle("List")
-                    .navigationBarTitleDisplayMode(.automatic)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                ScrollView {
+                    VStack(spacing: 3) {
+                        ForEach(0..<10) { _ in
+                            ListItem()
+                        }
+                    }
+                    .padding()
+                }
             }
+            .background(Color.red)
         }
     }
 }

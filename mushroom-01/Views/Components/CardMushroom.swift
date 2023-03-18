@@ -24,8 +24,7 @@ struct CardMushroom: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color("darkGreen"), lineWidth: 10)
                     )
-                    .shadow(radius: 5)
-                
+                    .shadow(radius: 3)
                 VStack(alignment: .leading) {
                     Spacer().frame(height: 10)
                     HStack {
@@ -55,15 +54,12 @@ struct CardMushroom: View {
                 .frame(maxWidth: geometry.size.width * 0.85)
                 .background(Color.white.opacity(0.85))
                 .cornerRadius(10)
-                padding(.bottom, 50)
-                
+                .padding(.bottom, 20)
             }
-            
             .frame(width: geometry.size.width * 0.95, height: geometry.size.width * 0.95)
-            
+            .padding(.all, geometry.size.width * 0.025)
         }
         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.width * 0.95)
-        .offset(x: UIScreen.main.bounds.width * 0.5 - UIScreen.main.bounds.width * 0.475)
     }
 }
 

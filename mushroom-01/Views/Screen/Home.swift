@@ -11,11 +11,8 @@ struct Home: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("Home")
+                CardListHorizontalMushroom()
             }
-            .navigationTitle("Mushroom")
-            .navigationBarTitleDisplayMode(.automatic)
-            .frame(maxWidth: .infinity, alignment: .center)
         }
     }
 }
