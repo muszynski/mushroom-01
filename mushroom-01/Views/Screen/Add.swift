@@ -11,7 +11,7 @@ struct Add: View {
     var body: some View {
         NavigationView{
             VStack{
-                Text("Add")
+                AddMushroomView()
             }
             .navigationTitle("Add")
             .navigationBarTitleDisplayMode(.automatic)

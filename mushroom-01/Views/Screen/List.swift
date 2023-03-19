@@ -23,7 +23,6 @@ struct List: View {
                     .padding()
                 }
             }
-            .background(Color.red)
         }
     }
 }
