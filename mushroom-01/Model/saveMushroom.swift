@@ -15,12 +15,12 @@ func saveMushroom(managedObjectContext: NSManagedObjectContext, inputImage: UIIm
         return
     }
 
-    let mushroom = Mushroom(context: managedObjectContext)
-    mushroom.id = UUID()
-    mushroom.name = name
-    mushroom.size = Int16(size)
-    mushroom.isFavorite = isFavorite
-    mushroom.imageData = imageData
+    let mushroomData = Mushroom(context: managedObjectContext)
+    mushroomData.id = UUID()
+    mushroomData.name = name
+    mushroomData.size = Int16(size)
+    mushroomData.isFavorite = isFavorite
+    mushroomData.imageData = imageData
 
     do {
         try managedObjectContext.save()

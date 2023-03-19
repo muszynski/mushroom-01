@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD0094CE29BFB62700E400A2 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CD29BFB62700E400A2 /* Main.swift */; };
-		CD0094D029BFB62700E400A2 /* Mushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CF29BFB62700E400A2 /* Mushroom.swift */; };
+		CD0094D029BFB62700E400A2 /* MushroomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0094CF29BFB62700E400A2 /* MushroomApp.swift */; };
 		CD0094D229BFB62900E400A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D129BFB62900E400A2 /* Assets.xcassets */; };
 		CD0094D529BFB62900E400A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */; };
 		CD0120A729C121B40098ACCF /* CardListHorizontalMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */; };
@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		CD0094CA29BFB62700E400A2 /* mushroom-01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mushroom-01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0094CD29BFB62700E400A2 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		CD0094CF29BFB62700E400A2 /* Mushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mushroom.swift; sourceTree = "<group>"; };
+		CD0094CF29BFB62700E400A2 /* MushroomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MushroomApp.swift; sourceTree = "<group>"; };
 		CD0094D129BFB62900E400A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListHorizontalMushroom.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 		CD8E6ABF29BFBCDE00E6642D /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				CD0094CF29BFB62700E400A2 /* Mushroom.swift */,
+				CD0094CF29BFB62700E400A2 /* MushroomApp.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9EDD2229C5C0D1001C0F2F /* MapFunctions.swift in Sources */,
-				CD0094D029BFB62700E400A2 /* Mushroom.swift in Sources */,
+				CD0094D029BFB62700E400A2 /* MushroomApp.swift in Sources */,
 				CD65618D29C737F2007704AD /* LocationManager.swift in Sources */,
 				CD9EDD2429C5DCD2001C0F2F /* AddMushroomView.swift in Sources */,
 				CD8E6AC429BFBDD000E6642D /* Add.swift in Sources */,

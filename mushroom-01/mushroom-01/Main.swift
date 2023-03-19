@@ -12,7 +12,7 @@ struct MushroomApp: App {
     @StateObject private var persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            Mushroom()
+            MushroomApp()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
