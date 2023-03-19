@@ -21,13 +21,23 @@ struct AddMushroomView: View {
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
     let mushrooms = ["Muchomor", "Borowik"]
     
+    private func addMushroom() {
+        let userLocation = locationManager.userLocation
+        let locationText = userLocation.map { location in
+            "Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)"
+        } ?? "Unknown"
+        print("User's location: \(locationText)")
+        
+        saveMushroom(managedObjectContext: managedObjectContext, inputImage: inputImage, name: mushrooms[selectedMushroom], size: mushroomSize, isFavorite: isFavorite)
+    }
+    
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Gatunek grzyba")) {
                     Picker("Wybierz gatunek", selection: $selectedMushroom) {
-                        ForEach(0 ..< mushrooms.count) {
-                            Text(self.mushrooms[$0])
+                        ForEach(0 ..< mushrooms.count, id: \.self) { index in
+                            Text(self.mushrooms[index])
                         }
                     }
                 }
@@ -68,13 +78,11 @@ struct AddMushroomView: View {
                     
                     Button(action: {
                         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                                sourceType = .camera
-                                showingImagePicker = true
-                            } else {
-                                print("Camera not available")
-                            }
-                        saveMushroomPhoto(managedObjectContext, inputImage: inputImage)
-                        // Add any other required data here
+                            sourceType = .camera
+                            showingImagePicker = true
+                        } else {
+                            print("Camera not available")
+                        }
                     }) {
                         Text("Zrób zdjęcie")
                             .foregroundColor(.white)
@@ -84,17 +92,9 @@ struct AddMushroomView: View {
                     }
                 }
                 
-                HStack{
+                HStack {
                     Button(action: {
-                        // Add mushroom
-                        let userLocation = locationManager.userLocation
-                        let locationText = userLocation.map { location in
-                            "Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)"
-                        } ?? "Unknown"
-                        print("User's location: \(locationText)")
-                        
-                        
-                        
+                        addMushroom()
                     }) {
                         Text("Dodaj znalezisko")
                             .foregroundColor(.white)
