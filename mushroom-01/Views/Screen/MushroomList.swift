@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MushroomList: View {
-    
-    
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: MushroomData.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \MushroomData.creationDate, ascending: !true)]) private var mushroomDataList: FetchedResults<MushroomData>
     
     var body: some View {
         NavigationView{
             VStack{
                 ScrollView {
                     VStack(spacing: 3) {
-                        ForEach(0..<10) { _ in
-                            ListItem()
+                        ForEach(mushroomDataList, id: \.self) { mushroomData in
+                            ListItem(mushroomData: mushroomData)
                         }
                     }
                     .padding()
@@ -26,6 +27,7 @@ struct MushroomList: View {
         }
     }
 }
+
 struct MushroomList_Previews: PreviewProvider {
     static var previews: some View {
         MushroomList()

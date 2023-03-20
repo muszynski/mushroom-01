@@ -7,19 +7,12 @@
 
 import SwiftUI
 import MapKit
+import CoreData
 
 struct ListItem: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    var mushroomData: MushroomData
 
-
-    @State private var imageName: String = "mushroom"
-    @State private var location: String = "Stare Babice"
-    @State private var typeMushroom: String = "Muchomor czerwony"
-    @State private var forrestType: String = "Las liściasty"
-    @State private var collectionDate: String = "18.03.2023"
-    @State private var collectionTime: String = "12:22"
-    @State private var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 52.2980744, longitude: 20.8984804)
-
-    @State private var isFavorite: Bool = false
     @State private var showDetail = false
 
     var body: some View {
@@ -28,19 +21,29 @@ struct ListItem: View {
         }) {
             HStack {
                 // Miniatura zdjęcia
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60, height: 60)
-                    .cornerRadius(5)
+                if let data = mushroomData.imageData, let image = UIImage(data: data) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60, height: 60)
+                        .cornerRadius(5)
+                } else {
+                    Image("mushroom")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60, height: 60)
+                        .cornerRadius(5)
+                }
 
                 // Tekst w dwóch liniach
                 VStack(alignment: .leading) {
-                    Text(typeMushroom)
+                    Text(mushroomData.typeMushroom ?? "Gatunek grzyba")
                         .font(.headline)
-                    Text(forrestType)
+                    Text(mushroomData.forrestType ?? "Rodzaj lasu")
                         .font(.subheadline)
-                    Text(location)
+                    Text("\(mushroomData.lat ?? 0.0)")
+                        .font(.caption)
+                    Text("\(mushroomData.long ?? 0.0)")
                         .font(.caption)
                 }
                 .padding(.leading)
@@ -50,34 +53,45 @@ struct ListItem: View {
                 // Przycisk ulubionych
                 VStack {
                     Button(action: {
-                        isFavorite.toggle()
+                        withAnimation {
+                            mushroomData.isFavorite.toggle()
+                            saveContext()
+                        }
                     }) {
-                        Image(systemName: isFavorite ? "heart.fill" : "heart")
-                            .foregroundColor(isFavorite ? .red : .gray)
+                        Image(systemName: mushroomData.isFavorite ? "heart.fill" : "heart")
+                            .foregroundColor(mushroomData.isFavorite ? .red : .gray)
                             .font(.title2)
-                }
-                    
-                    Text(collectionDate)
-                        .font(.caption2)
-                    Text(collectionTime)
+                    }
+
+                    Text(formatDate(date: mushroomData.creationDate))
                         .font(.caption2)
                 }
-                
+
             }
             .padding()
             .background(Color.white.opacity(0.85))
             .cornerRadius(5)
             .shadow(color: .black.opacity(0.1), radius: 1, x: 0, y: 1)
         }
-        .sheet(isPresented: $showDetail) {
-            MushroomDetailView(imageName: $imageName, location: $location, typeMushroom: $typeMushroom, forrestType: $forrestType, collectionDate: $collectionDate, collectionTime: $collectionTime, coordinate: $coordinate)
+//        .sheet(isPresented: $showDetail) {
+//            MushroomDetailView(imageName: mushroomData.imageData, location: mushroomData.location, typeMushroom: mushroomData.typeMushroom, forrestType: mushroomData.forrestType, collectionDate: formatDate(date: mushroomData.creationDate), collectionTime: formatTime(date: mushroomData.creationDate), coordinate: CLLocationCoordinate2D(latitude: mushroomData.latitude, longitude: mushroomData.longitude))
+//        }
+
+    }
+
+    private func saveContext() {
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
 }
 
 struct ListItem_Previews: PreviewProvider {
     static var previews: some View {
-        ListItem()
+        ListItem(mushroomData: MushroomData(context: NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)))
     }
 }
 

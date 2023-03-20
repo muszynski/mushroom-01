@@ -17,10 +17,11 @@ func saveMushroom(managedObjectContext: NSManagedObjectContext, inputImage: UIIm
 // błąd był generowany przez to że Persistance Controller nie był Observed Objcet
     let mushroomData = MushroomData(context: managedObjectContext)
     mushroomData.id = UUID()
-    mushroomData.name = name
+    mushroomData.typeMushroom = name
     mushroomData.size = Int16(size)
     mushroomData.isFavorite = isFavorite
     mushroomData.imageData = imageData
+    mushroomData.creationDate = Date()
 
     do {
         try managedObjectContext.save()

@@ -12,6 +12,7 @@
 		CD0094D229BFB62900E400A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D129BFB62900E400A2 /* Assets.xcassets */; };
 		CD0094D529BFB62900E400A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */; };
 		CD0120A729C121B40098ACCF /* CardListHorizontalMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */; };
+		CD55C89D29C9087A004AE838 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD55C89C29C9087A004AE838 /* TimeConverter.swift */; };
 		CD5C49D629C5B07600EB0111 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C49D529C5B07600EB0111 /* MapView.swift */; };
 		CD65618B29C72E4B007704AD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65618A29C72E4B007704AD /* AddPhotoView.swift */; };
 		CD65618D29C737F2007704AD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65618C29C737F2007704AD /* LocationManager.swift */; };
@@ -36,6 +37,7 @@
 		CD0094D129BFB62900E400A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListHorizontalMushroom.swift; sourceTree = "<group>"; };
+		CD55C89C29C9087A004AE838 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		CD5C49D529C5B07600EB0111 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CD65618A29C72E4B007704AD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		CD65618C29C737F2007704AD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				CD9EDD2129C5C0D1001C0F2F /* MapFunctions.swift */,
 				CD65618C29C737F2007704AD /* LocationManager.swift */,
+				CD55C89C29C9087A004AE838 /* TimeConverter.swift */,
 			);
 			path = AppLogic;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				CD0094CE29BFB62700E400A2 /* Main.swift in Sources */,
 				CD65619029C73E77007704AD /* Model.xcdatamodeld in Sources */,
 				CD5C49D629C5B07600EB0111 /* MapView.swift in Sources */,
+				CD55C89D29C9087A004AE838 /* TimeConverter.swift in Sources */,
 				CD8E6AC829BFC54800E6642D /* CardMushroom.swift in Sources */,
 				CD65619629C7727D007704AD /* saveMushroom.swift in Sources */,
 				CD65618B29C72E4B007704AD /* AddPhotoView.swift in Sources */,
