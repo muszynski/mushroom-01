@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct ListItem: View {
+
+
     @State private var imageName: String = "mushroom"
     @State private var location: String = "Stare Babice"
     @State private var typeMushroom: String = "Muchomor czerwony"
@@ -46,13 +48,21 @@ struct ListItem: View {
                 Spacer()
 
                 // Przycisk ulubionych
-                Button(action: {
-                    isFavorite.toggle()
-                }) {
-                    Image(systemName: isFavorite ? "heart.fill" : "heart")
-                        .foregroundColor(isFavorite ? .red : .gray)
-                        .font(.title2)
+                VStack {
+                    Button(action: {
+                        isFavorite.toggle()
+                    }) {
+                        Image(systemName: isFavorite ? "heart.fill" : "heart")
+                            .foregroundColor(isFavorite ? .red : .gray)
+                            .font(.title2)
                 }
+                    
+                    Text(collectionDate)
+                        .font(.caption2)
+                    Text(collectionTime)
+                        .font(.caption2)
+                }
+                
             }
             .padding()
             .background(Color.white.opacity(0.85))
