@@ -14,8 +14,8 @@ func saveMushroom(managedObjectContext: NSManagedObjectContext, inputImage: UIIm
         print("Failed to convert inputImage to Data")
         return
     }
-
-    let mushroomData = Mushroom(context: managedObjectContext)
+// błąd był generowany przez to że Persistance Controller nie był Observed Objcet
+    let mushroomData = MushroomData(context: managedObjectContext)
     mushroomData.id = UUID()
     mushroomData.name = name
     mushroomData.size = Int16(size)

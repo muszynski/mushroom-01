@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct MushroomApp: App {
     @StateObject private var persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            MushroomApp()
+            MushroomTabView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -22,14 +22,18 @@ struct AddMushroomView: View {
     let mushrooms = ["Muchomor", "Borowik"]
     
     private func addMushroom() {
-        let userLocation = locationManager.userLocation
-        let locationText = userLocation.map { location in
-            "Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)"
-        } ?? "Unknown"
-        print("User's location: \(locationText)")
-        
-        saveMushroom(managedObjectContext: managedObjectContext, inputImage: inputImage, name: mushrooms[selectedMushroom], size: mushroomSize, isFavorite: isFavorite)
-    }
+            let userLocation = locationManager.userLocation
+            let locationText = userLocation.map { location in
+                "Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)"
+            } ?? "Unknown"
+            print("User's location: \(locationText)")
+
+            saveMushroom(managedObjectContext: managedObjectContext,
+                         inputImage: inputImage,
+                         name: mushrooms[selectedMushroom],
+                         size: mushroomSize,
+                         isFavorite: isFavorite)
+        }
     
     var body: some View {
         NavigationView {
@@ -113,12 +117,12 @@ struct AddMushroomView: View {
                             .cornerRadius(10)
                     }
                 }
-                .navigationBarTitle("Dodaj grzyba", displayMode: .inline)
             }
             .sheet(isPresented: $showingImagePicker) {
                 AddPhotoView(image: $inputImage, sourceType: sourceType).edgesIgnoringSafeArea(.bottom)
             }
-        }
+        }                .navigationBarTitle("Dodaj grzyba", displayMode: .inline)
+
     }
 }
 

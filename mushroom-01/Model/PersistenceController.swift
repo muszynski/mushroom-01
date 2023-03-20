@@ -7,35 +7,20 @@
 
 import CoreData
 
-struct PersistenceController {
+class PersistenceController: ObservableObject {
     static let shared = PersistenceController()
-    
-    let container : NSPersistentContainer
-    
-    init() {
+
+    let container: NSPersistentContainer
+
+    init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "Model")
-        container.loadPersistentStores { (name, error) in
-            if let error = error {
-                fatalError("Błąd: \(error.localizedDescription)")
-            }
+        if inMemory {
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-    }
-    
-    func save(completion: @escaping (Error?) -> () = {_ in}){
-        let context = container.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-                completion(nil)}
-            catch {
-                completion(error)
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        }
+        })
     }
-    func delete(_ object: NSManagedObject, completion: @escaping (Error?) -> () = {_ in}) {
-        let context = container.viewContext
-        context.delete(object)
-        save(completion: completion)
-    }
-    
 }

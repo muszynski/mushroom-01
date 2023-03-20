@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MushroomApp: View {
+struct MushroomTabView: View {
     @State private var selectedTab = 0
     var body: some View {
         ZStack{
@@ -24,7 +24,7 @@ struct MushroomApp: View {
                         Text("Add")
                     }
                 
-                List()
+                MushroomList()
                     .tabItem {
                         Image(systemName: "list.bullet")
                         Text("List")
@@ -33,8 +33,8 @@ struct MushroomApp: View {
         }
     }
 }
-struct MushroomApp_Previews: PreviewProvider {
+struct MushroomTabView_Previews: PreviewProvider {
     static var previews: some View {
-        MushroomApp()
+        MushroomTabView()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct List: View {
+struct MushroomList: View {
     
     
     
@@ -26,8 +26,8 @@ struct List: View {
         }
     }
 }
-struct List_Previews: PreviewProvider {
+struct MushroomList_Previews: PreviewProvider {
     static var previews: some View {
-        List()
+        MushroomList()
     }
 }
