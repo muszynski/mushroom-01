@@ -9,26 +9,28 @@ import SwiftUI
 import CoreLocation
 
 struct MushroomDetailView: View {
-    @Binding var imageName: String
-    @Binding var location: String
-    @Binding var typeMushroom: String
-    @Binding var forrestType: String
-    @Binding var collectionDate: String
-    @Binding var collectionTime: String
-    @Binding var coordinate: CLLocationCoordinate2D
+//    @Binding var imageName: String
+//    @Binding var location: String
+//    @Binding var typeMushroom: String
+//    @Binding var forrestType: String
+//    @Binding var collectionDate: String
+//    @Binding var collectionTime: String
+//    @Binding var coordinate: CLLocationCoordinate2D
+    
+    var mushroomData: MushroomData
     
     var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
                 ZStack(alignment: .bottom) {
-                    Image(imageName)
+                    Image(uiImage: UIImage(data: mushroomData.imageData ?? Data()) ?? UIImage())
                         .resizable()
                         .scaledToFill()
                         .frame(maxWidth: geometry.size.width, maxHeight: geometry.size.height / 2)
                         .clipped()
                     
                     VStack(alignment: .leading) {
-                        Text(typeMushroom)
+                        Text(mushroomData.typeMushroom ?? "Unknown Mushroom")
                             .font(.title)
                             .foregroundColor(.white)
                             .shadow(radius: 3)
@@ -38,7 +40,7 @@ struct MushroomDetailView: View {
                                 .foregroundColor(.white)
                                 .shadow(radius: 3)
                             
-                            Text(location)
+                            Text(mushroomData.location ?? "Unknown Location")
                                 .foregroundColor(.white)
                                 .shadow(radius: 3)
                         }
@@ -49,7 +51,7 @@ struct MushroomDetailView: View {
                 
                 ZStack(alignment: .top) {
                     Spacer()
-                    MapView(coordinate: $coordinate)
+                    MapView(coordinate: .constant(CLLocationCoordinate2D(latitude: mushroomData.lat, longitude: mushroomData.long)))
                         .frame(height: geometry.size.height / 2)
                     
                     VStack(alignment: .leading) {
@@ -57,20 +59,20 @@ struct MushroomDetailView: View {
                         HStack {
                             Image(systemName: "location.fill")
                                 .foregroundColor(.red)
-                            Text(location)
+                            Text(mushroomData.location ?? "Unknown Location")
                         }
                         .font(.caption2)
                         .frame(width: geometry.size.width * 0.85, alignment: .leading)
                         .padding(.leading, 40)
                         
                         Spacer().frame(height: 5)
-                        Text(typeMushroom)
+                        Text(mushroomData.typeMushroom ?? "Unknow Type")
                             .font(.title)
                             .foregroundColor(Color("textGreen"))
                             .frame(width: geometry.size.width * 0.85, alignment: .leading)
                             .padding(.leading, 40)
                         
-                        Text(forrestType)
+                        Text(mushroomData.forrestType ?? "Unknown Forrest")
                             .font(.footnote)
                             .foregroundColor(Color("textGreen"))
                             .frame(width: geometry.size.width * 0.85, alignment: .leading)
@@ -91,15 +93,7 @@ struct MushroomDetailView: View {
 
 struct MushroomDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MushroomDetailView(
-            imageName: .constant("mushroom"),
-            location: .constant("Stare Babice"),
-            typeMushroom: .constant("Muchomor czerwony"),
-            forrestType: .constant("Las liściasty"),
-            collectionDate: .constant("18.03.2023"),
-            collectionTime: .constant("12:22"),
-            coordinate: .constant(CLLocationCoordinate2D(latitude: 52.2980744, longitude: 20.8984804))
-        )
+        MushroomDetailView(mushroomData: MushroomData())
     }
 }
 
