@@ -4,46 +4,47 @@
 //
 //  Created by Łukasz Muszyński on 13/03/2023.
 //
-
 import SwiftUI
 
 struct CardMushroom: View {
-    
-    @State private var location : String = "Stare Babice"
-    @State private var typeMushroom : String = "Muchomor czerwony"
-    @State private var forrestType : String = "Las liściasty"
+    var mushroomData: MushroomData
     
     var body: some View {
         GeometryReader { geometry in
             ZStack (alignment: .bottom){
-                Image("mushroom")
-                    .resizable()
-                    .scaledToFill()
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color("darkGreen"), lineWidth: 10)
-                    )
-                    .shadow(radius: 3)
+                if let data = mushroomData.imageData, let uiImage = UIImage(data: data) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geometry.size.width * 0.95, height: geometry.size.width * 0.95)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color("darkGreen"), lineWidth: 10)
+                        )
+                        .shadow(radius: 3)
+                }
+                
                 VStack(alignment: .leading) {
                     Spacer().frame(height: 10)
                     HStack {
                         Image(systemName: "location.fill")
                             .foregroundColor(.red)
-                        Text((location))
+                        Text("\(mushroomData.location ?? "Unknown Location")")
                     }
                     .font(.caption2)
                     .frame(width: geometry.size.width * 0.85, alignment: .leading)
                     .padding(.leading, 40)
                     
                     Spacer().frame(height:5)
-                    Text(typeMushroom)
+                    Text(mushroomData.typeMushroom ?? "Unknown Mushroom")
                         .font(.title)
                         .foregroundColor(Color("textGreen"))
                         .frame(width: geometry.size.width * 0.85, alignment: .leading)
                         .padding(.leading, 40)
                     
-                    Text(forrestType)
+                    Text(formatDate(date: mushroomData.creationDate))
+                        .font(.caption2)
                         .font(.footnote)
                         .foregroundColor(Color("textGreen"))
                         .frame(width: geometry.size.width * 0.85, alignment: .leading)
@@ -65,6 +66,6 @@ struct CardMushroom: View {
 
 struct CardMushroom_Previews: PreviewProvider {
     static var previews: some View {
-        CardMushroom()
+        CardMushroom(mushroomData: MushroomData())
     }
 }

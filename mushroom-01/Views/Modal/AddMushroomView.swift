@@ -13,27 +13,44 @@ struct AddMushroomView: View {
     
     @StateObject var locationManager = LocationManager()
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.presentationMode) var presentationMode
     @State private var selectedMushroom = 0
     @State private var mushroomSize = 1
     @State private var isFavorite = false
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @State private var lat : Double = 0.0
+    @State private var long : Double = 0.0
+    @State private var showingPhotoLibraryPicker = false
+    @State private var showingCameraPicker = false
+    
     let mushrooms = ["Muchomor", "Borowik"]
     
-    private func addMushroom() {
-            let userLocation = locationManager.userLocation
-            let locationText = userLocation.map { location in
-                "Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)"
-            } ?? "Unknown"
+    private func addMushroom(completion: @escaping () -> Void) {
+        let mushroomManager = MushroomManager()
+        mushroomManager.saveMushroom(managedObjectContext: managedObjectContext,
+                                     inputImage: inputImage,
+                                     name: mushrooms[selectedMushroom],
+                                     size: mushroomSize,
+                                     isFavorite: isFavorite,
+                                     long: long,
+                                     lat: lat
+        )
+        completion()
+    }
+    
+    private func getLocation(completion: @escaping () -> Void) {
+        if let userLocation = locationManager.userLocation {
+            lat = userLocation.coordinate.latitude
+            long = userLocation.coordinate.longitude
+            let locationText = "Latitude: \(lat), Longitude: \(long)"
             print("User's location: \(locationText)")
-
-            saveMushroom(managedObjectContext: managedObjectContext,
-                         inputImage: inputImage,
-                         name: mushrooms[selectedMushroom],
-                         size: mushroomSize,
-                         isFavorite: isFavorite)
+            completion()
+        } else {
+            print("Unknown location")
         }
+    }
     
     var body: some View {
         NavigationView {
@@ -45,7 +62,14 @@ struct AddMushroomView: View {
                         }
                     }
                 }
-                
+                Section(header: Text("Wielkość grzyba")) {
+                    Picker("Wybierz wielkość", selection: $mushroomSize) {
+                        ForEach(1...5, id: \.self) { size in
+                            Text("\(size)")
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
                 Section {
                     HStack {
                         Spacer()
@@ -62,28 +86,22 @@ struct AddMushroomView: View {
                     }
                 }
                 
-                Section(header: Text("Wielkość grzyba")) {
-                    Picker("Wybierz wielkość", selection: $mushroomSize) {
-                        ForEach(1...5, id: \.self) { size in
-                            Text("\(size)")
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
+
                 
-                Section {
+                Section (header: Text("Dodaj zdjęcie")){
                     Button(action: {
-                        sourceType = .photoLibrary
-                        showingImagePicker = true
+                        showingPhotoLibraryPicker = true
                     }) {
                         Text("Dodaj zdjęcie z biblioteki")
-                            .foregroundColor(.blue)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, minHeight: 44)
+                            .background(Color.blue)
+                            .cornerRadius(10)
                     }
                     
                     Button(action: {
                         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                            sourceType = .camera
-                            showingImagePicker = true
+                            showingCameraPicker = true
                         } else {
                             print("Camera not available")
                         }
@@ -95,10 +113,13 @@ struct AddMushroomView: View {
                             .cornerRadius(10)
                     }
                 }
-                
-                HStack {
+                Section (header: Text("Utwórz")){
                     Button(action: {
-                        addMushroom()
+                        getLocation {
+                            addMushroom {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }
                     }) {
                         Text("Dodaj znalezisko")
                             .foregroundColor(.white)
@@ -108,7 +129,7 @@ struct AddMushroomView: View {
                     }
                     
                     Button(action: {
-                        // Cancel
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Anuluj")
                             .foregroundColor(.white)
@@ -118,11 +139,14 @@ struct AddMushroomView: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingImagePicker) {
-                AddPhotoView(image: $inputImage, sourceType: sourceType).edgesIgnoringSafeArea(.bottom)
+            .sheet(isPresented: $showingPhotoLibraryPicker) {
+                AddPhotoView(image: $inputImage, sourceType: .photoLibrary).edgesIgnoringSafeArea(.bottom)
+            }
+            .sheet(isPresented: $showingCameraPicker) {
+                AddPhotoView(image: $inputImage, sourceType: .camera).edgesIgnoringSafeArea(.bottom)
             }
         }                .navigationBarTitle("Dodaj grzyba", displayMode: .inline)
-
+        
     }
 }
 

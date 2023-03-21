@@ -41,9 +41,9 @@ struct ListItem: View {
                         .font(.headline)
                     Text(mushroomData.forrestType ?? "Rodzaj lasu")
                         .font(.subheadline)
-                    Text("\(mushroomData.lat ?? 0.0)")
+                    Text("\(mushroomData.lat )")
                         .font(.caption)
-                    Text("\(mushroomData.long ?? 0.0)")
+                    Text("\(mushroomData.long )")
                         .font(.caption)
                 }
                 .padding(.leading)
@@ -73,9 +73,7 @@ struct ListItem: View {
             .cornerRadius(5)
             .shadow(color: .black.opacity(0.1), radius: 1, x: 0, y: 1)
         }
-//        .sheet(isPresented: $showDetail) {
-//            MushroomDetailView(imageName: mushroomData.imageData, location: mushroomData.location, typeMushroom: mushroomData.typeMushroom, forrestType: mushroomData.forrestType, collectionDate: formatDate(date: mushroomData.creationDate), collectionTime: formatTime(date: mushroomData.creationDate), coordinate: CLLocationCoordinate2D(latitude: mushroomData.latitude, longitude: mushroomData.longitude))
-//        }
+
 
     }
 

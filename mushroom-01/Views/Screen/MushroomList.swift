@@ -24,6 +24,7 @@ struct MushroomList: View {
                     .padding()
                 }
             }
+            .navigationBarTitle("Lista")
         }
     }
 }
