@@ -18,6 +18,7 @@ struct MushroomDetailView: View {
 //    @Binding var coordinate: CLLocationCoordinate2D
     
     var mushroomData: MushroomData
+
     
     var body: some View {
         GeometryReader { geometry in

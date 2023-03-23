@@ -10,7 +10,8 @@ import CoreData
 import UIKit
 
 struct AddMushroomView: View {
-    
+    // Dodaj tę zmienną na początku struktury AddMushroomView
+    @Environment(\.isPreview) private var isPreview
     @StateObject var locationManager = LocationManager()
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.presentationMode) var presentationMode
@@ -115,12 +116,14 @@ struct AddMushroomView: View {
                 }
                 Section (header: Text("Utwórz")){
                     Button(action: {
-                        getLocation {
-                            addMushroom {
-                                presentationMode.wrappedValue.dismiss()
+                            getLocation {
+                                addMushroom {
+                                    if !isPreview {
+                                        presentationMode.wrappedValue.dismiss()
+                                    }
+                                }
                             }
-                        }
-                    }) {
+                        }) {
                         Text("Dodaj znalezisko")
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, minHeight: 44)
@@ -129,7 +132,7 @@ struct AddMushroomView: View {
                     }
                     
                     Button(action: {
-                        presentationMode.wrappedValue.dismiss()
+//                        presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Anuluj")
                             .foregroundColor(.white)
@@ -152,6 +155,6 @@ struct AddMushroomView: View {
 
 struct AddMushroomView_Previews: PreviewProvider {
     static var previews: some View {
-        AddMushroomView()
+        AddMushroomView().environment(\.isPreview, true)
     }
 }

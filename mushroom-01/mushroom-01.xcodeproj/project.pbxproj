@@ -28,7 +28,9 @@
 		CD9EDD2029C5C097001C0F2F /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EDD1F29C5C097001C0F2F /* CompassView.swift */; };
 		CD9EDD2229C5C0D1001C0F2F /* MapFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EDD2129C5C0D1001C0F2F /* MapFunctions.swift */; };
 		CD9EDD2429C5DCD2001C0F2F /* AddMushroomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EDD2329C5DCD2001C0F2F /* AddMushroomView.swift */; };
+		CDA21A2E29CB65FB00343FF2 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA21A2D29CB65FB00343FF2 /* Test.swift */; };
 		CDAB39F829C4E1840049D171 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB39F729C4E1840049D171 /* DetailScreen.swift */; };
+		CDCF0D8B29CB6C1600B70AC1 /* IsPreviewKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF0D8A29CB6C1600B70AC1 /* IsPreviewKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +56,9 @@
 		CD9EDD1F29C5C097001C0F2F /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		CD9EDD2129C5C0D1001C0F2F /* MapFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapFunctions.swift; sourceTree = "<group>"; };
 		CD9EDD2329C5DCD2001C0F2F /* AddMushroomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMushroomView.swift; sourceTree = "<group>"; };
+		CDA21A2D29CB65FB00343FF2 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CDAB39F729C4E1840049D171 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		CDCF0D8A29CB6C1600B70AC1 /* IsPreviewKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPreviewKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 				CD8E6AC329BFBDD000E6642D /* Add.swift */,
 				CD8E6AC529BFBDE100E6642D /* MushroomList.swift */,
 				CD55C8A029CA4F01004AE838 /* MapViewMushroom.swift */,
+				CDA21A2D29CB65FB00343FF2 /* Test.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				CD9EDD2129C5C0D1001C0F2F /* MapFunctions.swift */,
 				CD65618C29C737F2007704AD /* LocationManager.swift */,
 				CD55C89C29C9087A004AE838 /* TimeConverter.swift */,
+				CDCF0D8A29CB6C1600B70AC1 /* IsPreviewKey.swift */,
 			);
 			path = AppLogic;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				CD0094D029BFB62700E400A2 /* MushroomTabViewroomApp.swift in Sources */,
 				CD65618D29C737F2007704AD /* LocationManager.swift in Sources */,
 				CD9EDD2429C5DCD2001C0F2F /* AddMushroomView.swift in Sources */,
+				CDCF0D8B29CB6C1600B70AC1 /* IsPreviewKey.swift in Sources */,
 				CD8E6AC429BFBDD000E6642D /* Add.swift in Sources */,
 				CD8E6AC229BFBDC500E6642D /* Home.swift in Sources */,
 				CD0120A729C121B40098ACCF /* CardListHorizontalMushroom.swift in Sources */,
@@ -264,6 +271,7 @@
 				CD55C89D29C9087A004AE838 /* TimeConverter.swift in Sources */,
 				CD8E6AC829BFC54800E6642D /* CardMushroom.swift in Sources */,
 				CD65619629C7727D007704AD /* saveMushroom.swift in Sources */,
+				CDA21A2E29CB65FB00343FF2 /* Test.swift in Sources */,
 				CD55C8A129CA4F01004AE838 /* MapViewMushroom.swift in Sources */,
 				CD65618B29C72E4B007704AD /* AddPhotoView.swift in Sources */,
 				CDAB39F829C4E1840049D171 /* DetailScreen.swift in Sources */,
@@ -323,6 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -377,6 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -432,6 +442,7 @@
 				DEVELOPMENT_TEAM = 5NMXNJ3368;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Aplikacja potrzebuje dostępu do aparatu, aby dodawać zdjęcia znalezionych grzybów";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Aplikacja potrzebuje dostępu do lokalizacji, aby dodawać współrzędne geograficzne do Twoich znalezisk grzybów.";
