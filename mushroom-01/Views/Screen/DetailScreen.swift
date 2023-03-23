@@ -73,7 +73,7 @@ struct MushroomDetailView: View {
                             .frame(width: geometry.size.width * 0.85, alignment: .leading)
                             .padding(.leading, 40)
                         
-                        Text(mushroomData.forrestType ?? "Unknown Forrest")
+                        Text(mushroomData.forestType ?? "Unknown Forrest")
                             .font(.footnote)
                             .foregroundColor(Color("textGreen"))
                             .frame(width: geometry.size.width * 0.85, alignment: .leading)

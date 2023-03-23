@@ -41,7 +41,7 @@ struct ListItem: View {
                     VStack(alignment: .leading) {
                         Text(mushroomData.typeMushroom ?? "Gatunek grzyba")
                             .font(.headline)
-                        Text(mushroomData.forrestType ?? "Rodzaj lasu")
+                        Text(mushroomData.forestType ?? "Rodzaj lasu")
                             .font(.subheadline)
                         Text("\(mushroomData.lat )")
                             .font(.caption)

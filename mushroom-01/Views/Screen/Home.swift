@@ -8,28 +8,28 @@
 import SwiftUI
 
 struct Home: View {
-    @State private var showingAddMushroomView = false
+    @State private var isActive: Bool = false
 
     var body: some View {
         NavigationView {
             VStack {
                 CardListHorizontalMushroom()
                 Spacer()
-                Button(action: {
-                    showingAddMushroomView.toggle()
-                }) {
-                    Text("Dodaj")
-                        .foregroundColor(.white)
-                        .frame(width: 150, height: 150)
-                        .background(Color.blue)
-                        .clipShape(Circle())
+                NavigationLink(destination: AddMushroomView(), isActive: $isActive) {
+                    Button(action: {
+                        isActive = true
+                    }) {
+                        Text("Dodaj")
+                            .foregroundColor(.white)
+                            .frame(width: 150, height: 150)
+                            .background(Color.blue)
+                            .clipShape(Circle())
+                    }
                 }
+                .isDetailLink(false)
                 Spacer()
             }
             .navigationBarTitle("Home")
-            .sheet(isPresented: $showingAddMushroomView) {
-                AddMushroomView()
-            }
         }
     }
 }
@@ -39,5 +39,3 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
-
-
