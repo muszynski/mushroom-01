@@ -13,15 +13,17 @@ struct Home: View {
     var body: some View {
         NavigationView {
             VStack {
+                Stats()
                 CardListHorizontalMushroom()
                 Spacer()
                 NavigationLink(destination: AddMushroomView(), isActive: $isActive) {
                     Button(action: {
                         isActive = true
                     }) {
-                        Text("Dodaj")
+                        Image("addButton")
+                            .resizable()
                             .foregroundColor(.white)
-                            .frame(width: 150, height: 150)
+                            .frame(width: 128, height: 128)
                             .background(Color.blue)
                             .clipShape(Circle())
                     }

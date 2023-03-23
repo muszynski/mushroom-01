@@ -41,3 +41,8 @@ struct MapViewFunc: UIViewRepresentable {
         }
     }
 }
+
+class MKPointAnnotationWithId: MKPointAnnotation, Identifiable {
+    var id = UUID()
+}
+

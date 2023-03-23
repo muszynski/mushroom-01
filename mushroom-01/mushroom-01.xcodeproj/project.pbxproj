@@ -13,6 +13,7 @@
 		CD0094D529BFB62900E400A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */; };
 		CD0120A729C121B40098ACCF /* CardListHorizontalMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */; };
 		CD126ED829CC93B1009BE507 /* MapViewMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD126ED729CC93B1009BE507 /* MapViewMushroom.swift */; };
+		CD126EDA29CCD0C2009BE507 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD126ED929CCD0C2009BE507 /* Stats.swift */; };
 		CD55C89D29C9087A004AE838 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD55C89C29C9087A004AE838 /* TimeConverter.swift */; };
 		CD5C49D629C5B07600EB0111 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C49D529C5B07600EB0111 /* MapView.swift */; };
 		CD65618B29C72E4B007704AD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65618A29C72E4B007704AD /* AddPhotoView.swift */; };
@@ -39,6 +40,7 @@
 		CD0094D429BFB62900E400A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListHorizontalMushroom.swift; sourceTree = "<group>"; };
 		CD126ED729CC93B1009BE507 /* MapViewMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewMushroom.swift; sourceTree = "<group>"; };
+		CD126ED929CCD0C2009BE507 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		CD55C89C29C9087A004AE838 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		CD5C49D529C5B07600EB0111 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CD65618A29C72E4B007704AD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				CD66940329C3B00200ED5071 /* ListItem.swift */,
 				CD5C49D529C5B07600EB0111 /* MapView.swift */,
 				CD9EDD1F29C5C097001C0F2F /* CompassView.swift */,
+				CD126ED929CCD0C2009BE507 /* Stats.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				CD9EDD2029C5C097001C0F2F /* CompassView.swift in Sources */,
 				CD65619429C7429E007704AD /* PersistenceController.swift in Sources */,
 				CD66940429C3B00200ED5071 /* ListItem.swift in Sources */,
+				CD126EDA29CCD0C2009BE507 /* Stats.swift in Sources */,
 				CD8E6AC629BFBDE100E6642D /* MushroomList.swift in Sources */,
 				CD0094CE29BFB62700E400A2 /* Main.swift in Sources */,
 				CD65619029C73E77007704AD /* Model.xcdatamodeld in Sources */,
