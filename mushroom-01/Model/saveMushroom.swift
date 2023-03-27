@@ -49,7 +49,6 @@ class MushroomManager {
             mushroomData.lat = lat
             mushroomData.location = cityName
             mushroomData.forestType = forrestType
-            mushroomData.id = UUID()
             
             do {
                 try managedObjectContext.save()

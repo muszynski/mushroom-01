@@ -29,6 +29,11 @@ struct MushroomTabView: View {
                     Image(systemName: "list.bullet")
                     Text("List")
                 }.tag(2)
+            Charts()
+                .tabItem {
+                    Image(systemName: "chart.bar.fill")
+                    Text("Statystki")
+                }.tag(3)
         }
     }
 }

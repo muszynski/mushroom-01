@@ -14,6 +14,7 @@
 		CD0120A729C121B40098ACCF /* CardListHorizontalMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */; };
 		CD126ED829CC93B1009BE507 /* MapViewMushroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD126ED729CC93B1009BE507 /* MapViewMushroom.swift */; };
 		CD126EDA29CCD0C2009BE507 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD126ED929CCD0C2009BE507 /* Stats.swift */; };
+		CD3C455129CE04BA00E27E0F /* Charts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C455029CE04BA00E27E0F /* Charts.swift */; };
 		CD55C89D29C9087A004AE838 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD55C89C29C9087A004AE838 /* TimeConverter.swift */; };
 		CD5C49D629C5B07600EB0111 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C49D529C5B07600EB0111 /* MapView.swift */; };
 		CD65618B29C72E4B007704AD /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65618A29C72E4B007704AD /* AddPhotoView.swift */; };
@@ -41,6 +42,7 @@
 		CD0120A629C121B40098ACCF /* CardListHorizontalMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListHorizontalMushroom.swift; sourceTree = "<group>"; };
 		CD126ED729CC93B1009BE507 /* MapViewMushroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewMushroom.swift; sourceTree = "<group>"; };
 		CD126ED929CCD0C2009BE507 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		CD3C455029CE04BA00E27E0F /* Charts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts.swift; sourceTree = "<group>"; };
 		CD55C89C29C9087A004AE838 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		CD5C49D529C5B07600EB0111 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CD65618A29C72E4B007704AD /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				CD5C49D529C5B07600EB0111 /* MapView.swift */,
 				CD9EDD1F29C5C097001C0F2F /* CompassView.swift */,
 				CD126ED929CCD0C2009BE507 /* Stats.swift */,
+				CD3C455029CE04BA00E27E0F /* Charts.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -188,6 +191,8 @@
 			dependencies = (
 			);
 			name = "mushroom-01";
+			packageProductDependencies = (
+			);
 			productName = "mushroom-01";
 			productReference = CD0094CA29BFB62700E400A2 /* mushroom-01.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +221,8 @@
 				Base,
 			);
 			mainGroup = CD0094C129BFB62700E400A2;
+			packageReferences = (
+			);
 			productRefGroup = CD0094CB29BFB62700E400A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,6 +261,7 @@
 				CD66940429C3B00200ED5071 /* ListItem.swift in Sources */,
 				CD126EDA29CCD0C2009BE507 /* Stats.swift in Sources */,
 				CD8E6AC629BFBDE100E6642D /* MushroomList.swift in Sources */,
+				CD3C455129CE04BA00E27E0F /* Charts.swift in Sources */,
 				CD0094CE29BFB62700E400A2 /* Main.swift in Sources */,
 				CD65619029C73E77007704AD /* Model.xcdatamodeld in Sources */,
 				CD5C49D629C5B07600EB0111 /* MapView.swift in Sources */,
